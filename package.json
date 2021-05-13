@@ -12,6 +12,7 @@
 		"react-dom": "^17.0.2",
 		"react-firebase-hooks": "^3.0.4",
 		"react-scripts": "^2.1.8",
+		"reactfire": "*",
 		"web-vitals": "^1.0.1"
 	},
 	"scripts": {
