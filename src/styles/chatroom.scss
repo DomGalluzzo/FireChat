@@ -1,0 +1,26 @@
+.chatroom-container {
+	border: 1px solid slategray;
+	display: flex;
+	justify-content: space-between;
+	margin-top: 5%;
+}
+
+.messages-container {
+	border: 1px solid red;
+	width: 80%;
+}
+
+.chatroom-list-container {
+	border: 1px solid blue;
+	width: 20%;
+	list-style: none;
+}
+
+.messages-form-row {
+	// display: flex;
+	// justify-content: space-between;
+}
+
+.message-form-textbox {
+	width: 60%;
+}

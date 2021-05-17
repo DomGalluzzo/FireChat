@@ -2,17 +2,21 @@ import React from "react";
 
 import "firebase/auth";
 import "firebase/firestore";
-import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./styles/index.scss";
+import { Container } from "react-bootstrap";
 
-import SignIn from "./components/SignIn";
-import Burrito from "./components/Burrito";
+// import SignIn from "./components/SignIn";
+// import Burrito from "./components/Burrito";
+import Chatroom from "./components/Chatroom";
 
 function App() {
 	return (
-		<div className="App">
-			<SignIn />
-			<Burrito />
-		</div>
+		<Container className="main-container">
+			<div className="App">
+				<Chatroom />
+			</div>
+		</Container>
 	);
 }
 
