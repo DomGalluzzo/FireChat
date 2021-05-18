@@ -1,8 +1,8 @@
 import React from "react";
-// import { useAuthState } from "react-firebase-hooks/auth";
+import { signInWithGoogle } from "../firebase";
 
 const SignIn = () => {
-	return <button>Sign in with Google</button>;
+	return <button onClick={signInWithGoogle}>Sign in with Google</button>;
 };
 
 export default SignIn;
