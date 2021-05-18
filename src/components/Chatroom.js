@@ -17,7 +17,6 @@ const Chatroom = () => {
 			.collection("messages"),
 		{ snapshotListenOptions: { includeMetadataChanges: true } }
 	);
-	debugger;
 
 	// useEffect(() => {}, [message]);
 
