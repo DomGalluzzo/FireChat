@@ -15,6 +15,7 @@ const Application = () => {
 			<Navbar>
 				<SignOut />
 			</Navbar>
+
 			{user ? <Chatroom /> : <SignIn />}
 		</Container>
 	);
