@@ -4,17 +4,16 @@ import { auth } from "../firebase";
 import { Container, Navbar } from "react-bootstrap";
 
 import SignIn from "./SignIn";
-import SignOut from "./SignOut";
+import Navigation from "./Navigation";
+
 import Chatroom from "./Chatroom";
 
 const Application = () => {
 	const [user] = useAuthState(auth);
 
 	return (
-		<Container>
-			<Navbar>
-				<SignOut />
-			</Navbar>
+		<Container className="main-container p-0">
+			<Navigation user={user} />
 
 			{user ? <Chatroom /> : <SignIn />}
 		</Container>
