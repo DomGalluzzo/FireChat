@@ -15,11 +15,41 @@
 	list-style: none;
 }
 
-.message-box-form {
+.messages-container {
+	padding: 10px;
+	height: 80vh;
+	margin: 10vh 0 10vh;
+	overflow-y: scroll;
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
 }
 
-.message-box-text-area {
-	width: 70%;
+p {
+	max-width: 500px;
+	margin-bottom: 12px;
+	line-height: 24px;
+	padding: 10px 20px;
+	border-radius: 25px;
+	position: relative;
+	color: white;
+	text-align: center;
+}
+
+.message {
+	display: flex;
+	align-items: center;
+}
+
+.sent {
+	flex-direction: row-reverse;
+}
+
+.sent p {
+	color: white;
+	background: #0b93f6;
+	align-self: flex-end;
+}
+.received p {
+	background: #e5e5ea;
+	color: black;
 }
