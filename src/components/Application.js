@@ -1,7 +1,7 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../firebase";
-import { Container, Navbar } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 
 import SignIn from "./SignIn";
 import Navigation from "./Navigation";

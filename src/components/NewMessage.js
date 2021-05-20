@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import { auth } from "../firebase";
 
 import firebase from "firebase/app";
@@ -10,7 +10,6 @@ const NewMessage = () => {
 		e.preventDefault();
 
 		const db = firebase.firestore();
-		const { uid } = auth.currentUser;
 
 		const messagesRef = db
 			.collection("chatrooms")
