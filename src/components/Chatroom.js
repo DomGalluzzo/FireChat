@@ -1,26 +1,29 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
-import {
-	useCollection,
-	useCollectionData,
-} from "react-firebase-hooks/firestore";
+import { useCollection } from "react-firebase-hooks/firestore";
 import firebase from "firebase/app";
 
-import { Button, Container, Form } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import Message from "./Message";
 import NewMessage from "./NewMessage";
 
 const Chatroom = () => {
+	const ref = useRef();
+
 	const [value, loading, error] = useCollection(
 		firebase
 			.firestore()
 			.collection("chatrooms")
 			.doc("roomA")
 			.collection("messages")
-			.orderBy("createdAt")
-			.limitToLast(25),
+			.orderBy("timestamp", "asc")
+			.limitToLast(15),
 		{ snapshotListenOptions: { includeMetadataChanges: true } }
 	);
+
+	useEffect(() => {
+		ref.current && ref.current.scrollIntoView({ behavior: "smooth" });
+	}, [ref]);
 
 	return (
 		<Container className="chatroom-container">
@@ -36,7 +39,10 @@ const Chatroom = () => {
 					{value && (
 						<>
 							{value.docs.map((message) => (
-								<Message key={message.id} content={message.data().content} />
+								<>
+									<Message key={message.id} text={message.data().text} />
+									<span ref={ref}></span>
+								</>
 							))}
 						</>
 					)}

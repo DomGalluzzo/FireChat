@@ -1,12 +1,12 @@
 import React from "react";
 import { auth } from "../firebase";
 
-const Message = ({ content, uid }) => {
+const Message = ({ text, uid }) => {
 	const messageClass = uid === auth.currentUser.uid ? "received" : "sent";
 
 	return (
 		<div className={`message ${messageClass}`}>
-			<p>{content}</p>
+			<p>{text}</p>
 		</div>
 	);
 };

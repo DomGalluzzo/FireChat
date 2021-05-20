@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { auth } from "../firebase";
 
 import firebase from "firebase/app";
@@ -17,11 +17,15 @@ const NewMessage = () => {
 			.doc("roomA")
 			.collection("messages")
 			.add({
-				content: message,
-				createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-				uid,
-				from: auth.currentUser.displayName,
+				name: auth.currentUser.displayName,
+				text: message,
+				profilePicUrl: auth.currentUser.photoURL,
+				timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+			})
+			.catch((error) => {
+				console.error("Error writing new message to database", error);
 			});
+
 		setMessage("");
 	};
 
