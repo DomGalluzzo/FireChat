@@ -23,7 +23,8 @@ const Chatroom = () => {
 
 	useEffect(() => {
 		ref.current && ref.current.scrollIntoView({ behavior: "smooth" });
-	}, [ref]);
+		// ref.current && ref.current.scrollTop();
+	}, [value]);
 
 	return (
 		<Container className="chatroom-container">
@@ -39,11 +40,9 @@ const Chatroom = () => {
 					{value && (
 						<>
 							{value.docs.map((message) => (
-								<>
-									<Message key={message.id} text={message.data().text} />
-									<span ref={ref}></span>
-								</>
+								<Message key={message.id} text={message.data().text} />
 							))}
+							<span ref={ref}></span>
 						</>
 					)}
 				</Container>
