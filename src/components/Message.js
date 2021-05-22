@@ -11,7 +11,7 @@ const Message = ({ text, uid, userAvatar }) => {
 				src={userAvatar}
 				alt="UserAvatar.jpg"
 			/>
-			<p>{text}</p>
+			<p style={{ marginBottom: 0 }}>{text}</p>
 		</div>
 	);
 };
