@@ -5,6 +5,7 @@ import firebase from "firebase/app";
 
 const NewMessage = () => {
 	const [message, setMessage] = useState("");
+	const [text, setText] = useState("");
 
 	const sendMessage = async (e) => {
 		e.preventDefault();
@@ -19,6 +20,7 @@ const NewMessage = () => {
 				name: auth.currentUser.displayName,
 				text: message,
 				profilePicUrl: auth.currentUser.photoURL,
+				uid: auth.currentUser.uid,
 				timestamp: firebase.firestore.FieldValue.serverTimestamp(),
 			})
 			.catch((error) => {

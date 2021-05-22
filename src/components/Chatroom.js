@@ -39,7 +39,12 @@ const Chatroom = () => {
 					{value && (
 						<>
 							{value.docs.map((message) => (
-								<Message key={message.id} text={message.data().text} />
+								<Message
+									key={message.id}
+									text={message.data().text}
+									userAvatar={message.data().profilePicUrl}
+									uid={message.data().uid}
+								/>
 							))}
 							<span ref={ref}></span>
 						</>
