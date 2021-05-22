@@ -50,7 +50,9 @@ const Chatroom = () => {
 						</>
 					)}
 				</Container>
-				<NewMessage />
+				<Container className="new-message-container">
+					<NewMessage />
+				</Container>
 			</Container>
 		</Container>
 	);

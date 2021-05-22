@@ -12,8 +12,7 @@ const NewMessage = () => {
 
 		const db = firebase.firestore();
 
-		const messagesRef = db
-			.collection("chatrooms")
+		db.collection("chatrooms")
 			.doc("roomA")
 			.collection("messages")
 			.add({
