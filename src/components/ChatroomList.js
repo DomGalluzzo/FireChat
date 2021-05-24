@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useCollection } from "react-firebase-hooks/firestore";
 import firebase from "firebase/app";
+import { Link } from "react-router-dom";
 
 import { Container } from "react-bootstrap";
 
@@ -17,7 +18,7 @@ const ChatroomList = () => {
 			{value && (
 				<>
 					{value.docs.map((chatroom) => {
-						return <>{chatroom.data().name}</>;
+						return <h6>{chatroom.data().name}</h6>;
 					})}
 				</>
 			)}

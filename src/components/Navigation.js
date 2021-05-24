@@ -8,7 +8,7 @@ const Navigation = ({ user }) => {
 		<Container className="navigation-container py-2" fluid>
 			{user ? (
 				<>
-					<h3>Hello, {user.displayName}</h3>
+					<h3>Hello, {user.displayName ? user.displayName : "Guest"}</h3>
 					<SignOut />
 				</>
 			) : (

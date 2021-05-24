@@ -30,13 +30,14 @@ const NewMessage = () => {
 	};
 
 	return (
-		<form onSubmit={sendMessage}>
+		<form className="new-message-form" onSubmit={sendMessage}>
 			<input
+				className="new-message-input"
 				value={message}
 				onChange={(e) => setMessage(e.target.value)}
 				placeholder="Send message"
 			/>
-			<button type="submit" disabled={!message}>
+			<button className="new-message-button" type="submit" disabled={!message}>
 				Send
 			</button>
 		</form>
