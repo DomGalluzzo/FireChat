@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { useCollection } from "react-firebase-hooks/firestore";
 import firebase from "firebase/app";
-import { Link } from "react-router-dom";
 
 import { Container } from "react-bootstrap";
 

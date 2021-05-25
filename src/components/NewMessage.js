@@ -5,7 +5,6 @@ import firebase from "firebase/app";
 
 const NewMessage = () => {
 	const [message, setMessage] = useState("");
-	const [text, setText] = useState("");
 
 	const sendMessage = async (e) => {
 		e.preventDefault();
