@@ -21,5 +21,9 @@ export const signInWithGoogle = () => {
 	auth.signInWithPopup(provider);
 };
 
+export const signInAnon = () => {
+	auth.signInAnonymously();
+};
+
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
