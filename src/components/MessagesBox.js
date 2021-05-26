@@ -6,7 +6,6 @@ import firebase from "firebase/app";
 import { Container } from "react-bootstrap";
 import Message from "./Message";
 import NewMessage from "./NewMessage";
-import ChatroomList from "./ChatroomList";
 
 const MessagesBox = () => {
 	const ref = useRef();
