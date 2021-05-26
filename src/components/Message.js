@@ -1,15 +1,23 @@
 import React from "react";
 import { auth } from "../firebase";
+import { Image } from "react-bootstrap";
 
 const Message = ({ text, uid, userAvatar }) => {
 	const messageClass = uid === auth.currentUser.uid ? "sent" : "received";
 
+	const userAvatarCheck = (userAvatar) => {
+		debugger;
+		if (userAvatar === null) {
+			return "./guestIcon.png";
+		}
+		return userAvatar;
+	};
+
 	return (
 		<div className={`message ${messageClass}`}>
-			<img
+			<Image
 				className="message-user-avatar"
-				src={userAvatar}
-				alt="UserAvatar.jpg"
+				src={userAvatarCheck(userAvatar)}
 			/>
 			<p style={{ marginBottom: 0 }}>{text}</p>
 		</div>
