@@ -1,9 +1,16 @@
 .navigation-container {
+	background-color: #fca311;
+	height: 10vh;
+	min-height: 50px;
+	color: rgb(223, 223, 223);
+	position: fixed;
+	width: 100%;
+	max-width: 718px;
+	top: 0;
 	display: flex;
+	align-items: center;
 	justify-content: space-between;
-	background-color: rgba(0, 48, 73);
-
-	h3 {
-		color: #fca311;
-	}
+	z-index: 99;
+	padding: 10px;
+	box-sizing: border-box;
 }

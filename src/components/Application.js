@@ -13,9 +13,12 @@ const Application = () => {
 
 	return (
 		<Container className="main-container p-0">
-			<Navigation user={user} />
-
-			{user ? <MessagesBox /> : <SignIn />}
+			<Container className="navigation-container">
+				<Navigation user={user} />
+			</Container>
+			<Container className="user-check-container p-0">
+				{user ? <MessagesBox /> : <SignIn />}
+			</Container>
 		</Container>
 	);
 };

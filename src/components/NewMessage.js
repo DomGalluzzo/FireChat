@@ -37,7 +37,7 @@ const NewMessage = () => {
 				placeholder="Send message"
 			/>
 			<button className="new-message-button" type="submit" disabled={!message}>
-				Send
+				💬
 			</button>
 		</form>
 	);
