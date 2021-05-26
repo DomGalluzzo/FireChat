@@ -27,32 +27,29 @@ const MessagesBox = () => {
 	}, [value]);
 
 	return (
-		<Container className="chatroom-container">
-			<Container className="chatroom-list-container">
+		<Container className="chatroom-container p-0">
+			{/* <Container className="chatroom-list-container">
 				<ChatroomList />
-			</Container>
+			</Container> */}
 			<Container className="messages-box">
-				<Container className="messages-container">
-					{error && <strong>Error: {JSON.stringify(error)}</strong>}
-					{loading && <span>Loading...</span>}
-					{value && (
-						<>
-							{value.docs.map((message) => (
-								<Message
-									key={message.id}
-									text={message.data().text}
-									userAvatar={message.data().profilePicUrl}
-									uid={message.data().uid}
-								/>
-							))}
-							<span ref={ref}></span>
-						</>
-					)}
-				</Container>
-				<Container className="new-message-container">
-					<NewMessage />
-				</Container>
+				{error && <strong>Error: {JSON.stringify(error)}</strong>}
+				{loading && <span>Loading...</span>}
+				{value && (
+					<>
+						{value.docs.map((message) => (
+							<Message
+								key={message.id}
+								text={message.data().text}
+								userAvatar={message.data().profilePicUrl}
+								uid={message.data().uid}
+							/>
+						))}
+						<span ref={ref}></span>
+					</>
+				)}
 			</Container>
+
+			<NewMessage />
 		</Container>
 	);
 };
